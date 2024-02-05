@@ -8,11 +8,11 @@ def binary_to_hex_string(file_path):
     return hex_string
 
 def generate_c_code(hex_string, array_name):
-    array_size = len(hex_string) *2
-    random_string = secrets.token_hex(array_size//2)
+    array_size = len(hex_string)
+    random_string = secrets.token_hex(array_size//4)
 
-    c_code = f"char {array_name}[{array_size + 1}] = \"{random_string}\"; \n\n\n"
-    c_code += ''.join([f"{array_name}[{i // 2}] = (char)0x{hex_string[i:i+2]}; " for i in range(0, len(hex_string)//2, 2)])
+    c_code = f"char {array_name}[{array_size //2}] = \"{random_string}\"; \n\n\n"
+    c_code += ''.join([f"{array_name}[{i // 2}] = (char)0x{hex_string[i:i+2]}; " for i in range(0, len(hex_string), 2)])
 
     return c_code
 
