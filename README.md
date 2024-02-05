@@ -3,6 +3,10 @@
 the script takes a file as argument the file must containt a raw shellcode such as :
 ![msfvenom_screen2](https://github.com/araout42/Shellcode_not_in_data/assets/41875074/2e95e46c-4285-459f-8c63-34737e2804bb)
 
+it then parse the file and return this output that can help you to declare your shellcode at runtime : 
+![shellcode_not_in_data_screen](https://github.com/araout42/Shellcode_not_in_data/assets/41875074/44e74f1a-f9d9-4f29-8c01-766d52e16093)
+
+
 
 a very simple static evasion method would be to stop declaring your shellcode in the DATA section and instead declare it at RUNTIME
 
